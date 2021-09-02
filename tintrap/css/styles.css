@@ -1,0 +1,179 @@
+ /* HTML base attributes */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.5;
+  font-weight: bold;
+}
+p {
+  color: gray;
+}
+
+button {
+font-family: 'Montserrat', sans-serif;
+}
+
+.container-fluid {
+  padding: 7% 15%;
+}
+
+
+/* SECTION block */
+.colored-section {
+  background-color: #ff4c68;
+}
+
+/* HEADINGS block */
+.big-heading {
+    text-align: left;
+    font-family: 'Montserrat';
+    font-size: 3.5rem;
+    line-height: 1.5;
+    font-weight: 900;
+    color: white;
+}
+
+.price-text {
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+
+/* TITLE block */
+#title {
+
+}
+
+#title .container-fluid {
+  padding: 3% 15% 7%;
+}
+
+.title-image {
+  width: 60%;
+  transform: rotate(30deg);
+}
+
+.download-button {
+  margin: 5% 3% 5% 0;
+}
+
+
+/* NAVBAR block */
+.navbar-brand {
+  font-family: "Ubuntu";
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.navbar {
+  padding: 0 0 4.5rem;
+}
+
+.nav-item {
+  padding: 0 18px;
+}
+
+
+/* PRESS block */
+#press {
+  background-color: #FFBF86;
+  padding-bottom: 3.5%;
+}
+
+.press-image {
+  width: 15%;
+}
+
+
+/* FEATURE block */
+#features {
+  padding: 7% 15%;
+}
+
+.feature-icon  {
+  color: #FFBF86;
+  margin-bottom: 1rem;
+}
+
+.feature-icon:hover {
+  color:#ff4c68;
+}
+
+.row-align-center {
+  padding: 4%;
+}
+
+
+/* TESTIMONIAL block */
+#testimonials {
+  padding: 7% 15%;
+  background-color: #FFBF86;
+  color: floralwhite;
+}
+
+.testimonial-image {
+  width: 10%;
+}
+
+
+/* PRICING block */
+#pricing {
+  padding: 7% 15%;
+}
+
+.pricing-column {
+  padding: 2% 1%;
+}
+
+.card-footer {
+
+}
+
+
+/* CTA block */
+#cta {
+  padding: 7% 15%;
+  background-color: #ff4c68;
+}
+
+.cta-text {
+  color: floralwhite;
+}
+
+
+/* FOOTER block */
+#footer {
+  background-color: floralwhite;
+  padding-top: 1%
+}
+
+.footer-icon {
+    color: gray;
+      padding: 2%;
+}
+
+.footer-icon:hover {
+  color: blue;
+
+}
+
+
+/* MOBILE SETTINGS block */
+@media (max-width: 1028px) {
+  .title-image {
+    position: static;
+    transition: rotate(-30deg);
+  }
+
+  #title {
+    text-align: center;
+  }
+}

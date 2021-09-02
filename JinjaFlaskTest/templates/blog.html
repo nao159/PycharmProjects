@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Title of the document</title>
+   <link rel="stylesheet" href="static/style.css">
+</head>
+
+<body>
+{% for blog in posts: %}
+    <h1>{{ blog }}</h1>
+{% endfor %}
+<a href="{{ url_for('link_to') }}">go_to_link</a>
+
+</body>
+<footer>
+    <p>Developed by {{author}} in <script type="text/javascript">
+  document.write(new Date().getFullYear());
+</script></p>
+
+</footer>
+</html>
