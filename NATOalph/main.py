@@ -1,19 +1,35 @@
-import pandas
+from flask import Flask, render_template, redirect, url_for, request
+from flask_bootstrap import Bootstrap
+from flask_sqlalchemy import SQLAlchemy
+from flask_wtf import FlaskForm
+from wtforms import StringField, SubmitField
+from wtforms.validators import DataRequired
+import requests
+
+app = Flask(__name__)
+app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///<top_movies>.db'
+db = SQLAlchemy(app)
+Bootstrap(app)
 
 
-nato_alphabet = pandas.read_csv("nato_phonetic_alphabet.csv")
-# TODO 1. Create a dictionary in this format:
-{"A": "Alfa", "B": "Bravo"}
-nato_alpha_converted = {}
-for (index, row) in nato_alphabet.iterrows():
-    nato_alpha_converted[row.letter] = row.code
+class Movie(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(40), unique=True, nullable=False)
+    year = db.Column(db.Integer, nullable=False)
+    description = db.Column(db.String(500))
+    rating = db.Column(db.Float, nullable=False)
+    ranking = db.Column(db.Integer, nullable=False)
+    review = db.Column(db.String(1000))
+    img_url = db.Column(db.String(100), nullable=False)
 
-print(nato_alpha_converted)
 
-# TODO 2. Create a list of the phonetic code words from a word that the user inputs.
-your_name = input("Enter your name: ").upper()
-your_name_array = []
-for letter in your_name:
-    your_name_array += letter
-nato_alpha_dict = {letter: nato_alpha_converted[letter] for letter in your_name_array}
-print(nato_alpha_dict)
+db.create_all()
+
+@app.route("/")
+def home():
+    return render_template("index.html")
+
+
+if __name__ == '__main__':
+    app.run(debug=True)

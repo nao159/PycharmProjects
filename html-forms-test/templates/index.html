@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>HTML FORMS</h1>
+    <form action='{{ url_for("receive_data") }}' method='post' enctype="multipart/form-data">
+      <label for="fname">First name: </label><br>
+      <input type='text' id='fname' name='fname'><br>
+      <label for="surname">First name: </label><br>
+      <input type='text' id='surname' name='surname'><br>
+      <input type='submit' value='Submit'>
+      </form>
+  </body>
+</html>
